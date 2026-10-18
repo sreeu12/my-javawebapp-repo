@@ -20,8 +20,9 @@ jobs:
       run: mvn clean install -f MyWebApp/pom.xml
     - name: SonarQube Scan with Quality Gate
       run: |
-        mvn -f MyWebApp/pom.xml sonar:sonar \
-          -Dsonar.projectKey=sreeu12
-          -Dsonar.projectName=sreeu12_my-javawebapp-repo
+         mvn -f MyWebApp/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
+          -Dsonar.projectKey=sreeu12 \
+          -Dsonar.projectName=sreeu12_my-javawebapp-repo \
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-          -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+        
