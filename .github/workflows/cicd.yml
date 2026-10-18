@@ -23,6 +23,7 @@ jobs:
          mvn -f MyWebApp/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
           -Dsonar.projectKey=sreeu12 \
           -Dsonar.projectName=sreeu12_my-javawebapp-repo \
+          -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         
