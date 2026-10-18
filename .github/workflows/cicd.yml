@@ -21,7 +21,7 @@ jobs:
     - name: SonarQube Scan with Quality Gate
       run: |
         mvn -f MyWebApp/pom.xml sonar:sonar \
-          -Dsonar.projectKey=MyWebApp \
-          -Dsonar.projectName=MyWebApp \
+          -Dsonar.projectKey=sreeu12
+          -Dsonar.projectName=sreeu12_my-javawebapp-repo
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
